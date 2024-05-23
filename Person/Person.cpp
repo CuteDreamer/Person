@@ -5,45 +5,43 @@ using namespace std;
 
 class Person {
 private:
-    string FirstName;
-    string LastName;
+    string firstname;
+    string lastname;
 
 public:
-    // Конструкторы
-    Person() : FirstName(""), LastName("") {}
-    Person(string FirstName, string LastName) : FirstName(FirstName), LastName(LastName) {}
 
-    // Геттеры
-    string GetFirstName() const { return FirstName; }
-    string GetLastName() const { return LastName; }
+    Person() : firstname(""), lastname("") {}
+    Person(string firstname, string lastname) : firstname(firstname), lastname(lastname) {}
 
-    // Сеттеры
-    void SetFirstName(string FirstName) { this->FirstName = FirstName; }
-    void SetLastName(string LastName) { this->LastName = LastName; }
 
-    // Метод для печати информации о человеке
+    string GetFirstName() const { return firstname; }
+    string GetLastName() const { return lastname; }
+
+    void SetFirstName(string firstname) { this->firstname = firstname; }
+    void SetLastName(string lastname) { this->lastname = lastname; }
+
+
     void print() const {
-        cout << "Name: " << FirstName << " " << LastName << "\n";
+        cout << "Name: " << firstname << " " << lastname << "\n";
             
     }
 };
 
 class Student : public Person {
 private:
-    string studentID;
+    string studentid;
 
 public:
-    // Конструкторы
-    Student() : Person(), studentID("") {}
-    Student(string FirstName, string LastName, string studentID) : Person(FirstName, LastName), studentID(studentID) {}
 
-    // Геттеры
-    string getStudentID() const { return studentID; }
+    Student() : Person(), studentid("") {}
+    Student(string firstname, string lastname, string studentid) : Person(firstname, lastname), studentid(studentid) {}
 
-    // Сеттеры
-    void setStudentID(string studentID) { this->studentID = studentID; }
+    string getStudentID() const { return studentid; }
 
-    // Методы унаследованного класса
+
+    void setStudentID(string studentID) { this->studentid = studentid; }
+
+
     void passExam() {
         cout << GetFirstName() << " " << GetLastName() << " passed the exam." << "\n";
     }
@@ -55,22 +53,21 @@ public:
 
 class GradStudent : public Student {
 private:
-    string thesisTopic;
+    string thesistopic;
 
 public:
-    // Конструкторы
-    GradStudent() : Student(), thesisTopic("") {}
-    GradStudent(string FirstName, string LastName, string studentID, string thesisTopic) : Student(FirstName, LastName, studentID), thesisTopic(thesisTopic) {}
 
-    // Геттеры
-    string getThesisTopic() const { return thesisTopic; }
+    GradStudent() : Student(), thesistopic("") {}
+    GradStudent(string firstname, string lastname, string studentid, string thesistopic) : Student(firstname, lastname, studentid), thesistopic(thesistopic) {}
 
-    // Сеттеры
-    void setThesisTopic(string thesisTopic) { this->thesisTopic = thesisTopic; }
+    string getThesisTopic() const { return thesistopic; }
+
+
+    void setThesisTopic(string thesistopic) { this->thesistopic = thesistopic; }
 };
 
 int main() {
-    // Пример использования классов Person, Student и GradStudent
+
     GradStudent gradStudent("Bob", "Bobson", "54321", "Machine Learning");
     gradStudent.print();
     gradStudent.passExam();
