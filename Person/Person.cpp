@@ -21,7 +21,7 @@ public:
     void SetLastName(string lastname) { this->lastname = lastname; }
 
 
-    void print() const {
+    void Print() const {
         cout << "Name: " << firstname << " " << lastname << "\n";
             
     }
@@ -36,17 +36,17 @@ public:
     Student() : Person(), studentid("") {}
     Student(string firstname, string lastname, string studentid) : Person(firstname, lastname), studentid(studentid) {}
 
-    string getStudentID() const { return studentid; }
+    string GetStudentID() const { return studentid; }
 
 
-    void setStudentID(string studentID) { this->studentid = studentid; }
+    void SetStudentID(string studentID) { this->studentid = studentid; }
 
 
-    void passExam() {
+    void PassExam() {
         cout << GetFirstName() << " " << GetLastName() << " passed the exam." << "\n";
     }
 
-    void sleepInClass() {
+    void SleepInClass() {
         cout << GetFirstName() << " " << GetLastName() << " overslept a class." << "\n";
     }
 };
@@ -60,18 +60,18 @@ public:
     GradStudent() : Student(), thesistopic("") {}
     GradStudent(string firstname, string lastname, string studentid, string thesistopic) : Student(firstname, lastname, studentid), thesistopic(thesistopic) {}
 
-    string getThesisTopic() const { return thesistopic; }
+    string GetThesisTopic() const { return thesistopic; }
 
 
-    void setThesisTopic(string thesistopic) { this->thesistopic = thesistopic; }
+    void SetThesisTopic(string thesistopic) { this->thesistopic = thesistopic; }
 };
 
 int main() {
 
     GradStudent gradStudent("Bob", "Bobson", "54321", "Machine Learning");
-    gradStudent.print();
-    gradStudent.passExam();
-    gradStudent.setThesisTopic("Artificial Intelligence");
-    cout << "Thesis Topic: " << gradStudent.getThesisTopic() << "\n";
+    gradStudent.Print();
+    gradStudent.PassExam();
+    gradStudent.SetThesisTopic("Artificial Intelligence");
+    cout << "Thesis Topic: " << gradStudent.GetThesisTopic() << "\n";
 
 }
